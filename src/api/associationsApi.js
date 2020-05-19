@@ -1,7 +1,9 @@
+// Actions
+import { sheetRequested } from '../store/associations/actions';
+
 function getAssociations() {
-	const url = '/associations.json';
-	const location = 'associations';
-	// return urlRequested({ url, location });
+	const sheet_url = process.env.REACT_APP_ASSOCIATIONS_SHEET;
+	return sheetRequested({ sheet_url });
 }
 
 const api = {
