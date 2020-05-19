@@ -29,6 +29,8 @@ const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
 
+const lessToJs = require('less-vars-to-js');
+
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 // Some apps do not need the benefits of saving a web request, so not inlining the chunk
@@ -49,6 +51,11 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const lessRegex = /\.less$/;
+
+const themeVariables = lessToJs(
+  fs.readFileSync(path.join(__dirname, '../src/styles/ant-theme.less'), 'utf8')
+);
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -484,6 +491,23 @@ module.exports = function(webpackEnv) {
                 },
                 'sass-loader'
               ),
+            },
+            // Adds support for LESS
+            {
+              test: lessRegex,
+              use: [{
+                loader: "style-loader"
+              }, {
+                loader: "css-loader"
+              }, {
+                loader: "less-loader",
+                options: {
+                  lessOptions: {
+                    modifyVars: themeVariables,
+                    javascriptEnabled: true
+                  }
+                }
+              }]
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.

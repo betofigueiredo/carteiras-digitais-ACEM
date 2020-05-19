@@ -1,6 +1,7 @@
 import React from 'react';
 
 // CSS
+import { Button } from 'antd';
 import * as s from './Page1.style';
 
 // Components
@@ -11,7 +12,7 @@ const Page1 = () => (
 	<s.PageWrapper>
 		{/* <LeftPage />
 		<RightPage /> */}
-		aaa
+		<Button type="primary">a</Button>
 	</s.PageWrapper>
 );
 
