@@ -1,0 +1,1 @@
+export { checkPagePosition } from './checkPagePosition';
