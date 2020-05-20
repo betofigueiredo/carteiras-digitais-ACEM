@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import * as s from './AllPages.style';
 
 // Components
-import AssociationsSearch from '../../components/AssociationsSearch';
-import MembersSearch from '../../components/MembersSearch';
-import MemberProfile from '../../components/MemberProfile';
+import Associations from '../Associations';
+import Members from '../Members';
+import MemberProfile from '../MemberProfile';
 
 // Functions
 import { urlUtils } from '../../functions/urlUtils';
@@ -28,11 +28,11 @@ const AllPages = ({ match, history }) => {
 	return (
 		<s.Wrapper>
 			<s.Pages>
-				<AssociationsSearch
+				<Associations
 					page={page}
 					moveToPage={moveToPage}
 				/>
-				<MembersSearch
+				<Members
 					page={page}
 					moveToPage={moveToPage}
 				/>
