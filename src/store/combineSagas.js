@@ -1,9 +1,9 @@
 import { all, fork } from 'redux-saga/effects';
 
-import associationsSaga from './associations/sagas';
+import sharedSaga from './shared/sagas';
 
 export default function* rootSaga() {
 	yield all([
-		fork(associationsSaga),
+		fork(sharedSaga),
 	]);
 }

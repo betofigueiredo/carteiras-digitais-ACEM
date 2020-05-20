@@ -1,4 +1,4 @@
-export const sheetRequested = ({ sheet_url }) => ({
-	type: '[associations] FETCH_REQUESTED',
-	sheet_url,
+export const associationSelected = ({ association_id }) => ({
+	type: '[associations] ASSOCIATION_SELECTED',
+	association_id,
 });
