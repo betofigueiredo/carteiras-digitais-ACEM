@@ -10,11 +10,11 @@ export const Wrapper = styled.div`
 export const Pages = styled.div`
 	position: relative;
 	display: inline-block;
-	width: 475px;
-	min-height: 500px;
+	width: 450px;
+	min-height: 600px;
 	margin: 50px auto;
 	background: #fff;
-	${borderRadius('18px')}
+	${borderRadius('21px')}
 	${boxShadow('0 4px 49px rgba(190, 196, 214, 0.18)')}
 	overflow: hidden;
 `;
