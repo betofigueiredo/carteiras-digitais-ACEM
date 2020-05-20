@@ -12,7 +12,7 @@ import api from '../../api/associationsApi';
 // Functions
 import { checkPagePosition } from '../../functions/checkPagePosition';
 
-const AssociationsSearch = ({ page, setPage }) => {
+const AssociationsSearch = ({ page, moveToPage }) => {
 	const dispatch = useDispatch();
 	const associations = useSelector(store => store
 		.associations, shallowEqual) || {};
@@ -31,7 +31,7 @@ const AssociationsSearch = ({ page, setPage }) => {
 		<s.AssociationsPage position={position}>
 			AssociationsSearch
 
-			<Button type="primary" onClick={() => setPage(2)}>aaa</Button>
+			<Button type="primary" onClick={() => moveToPage(2)}>aaa</Button>
 
 			{associations.all_ids.map(association_id => (
 				<p key={association_id}>
@@ -46,7 +46,7 @@ const AssociationsSearch = ({ page, setPage }) => {
 
 AssociationsSearch.propTypes = {
 	page: PropTypes.number.isRequired,
-	setPage: PropTypes.func.isRequired,
+	moveToPage: PropTypes.func.isRequired,
 };
 
 export default AssociationsSearch;

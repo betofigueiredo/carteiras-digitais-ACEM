@@ -30,15 +30,15 @@ const AllPages = ({ match, history }) => {
 			<s.Pages>
 				<AssociationsSearch
 					page={page}
-					setPage={moveToPage}
+					moveToPage={moveToPage}
 				/>
 				<MembersSearch
 					page={page}
-					setPage={setPage}
+					moveToPage={moveToPage}
 				/>
 				<MemberProfile
 					page={page}
-					setPage={setPage}
+					moveToPage={moveToPage}
 				/>
 			</s.Pages>
 		</s.Wrapper>

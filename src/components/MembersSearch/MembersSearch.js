@@ -8,7 +8,7 @@ import * as s from './MembersSearch.style';
 // Functions
 import { checkPagePosition } from '../../functions/checkPagePosition';
 
-const MembersSearch = ({ page, setPage }) => {
+const MembersSearch = ({ page, moveToPage }) => {
 	const position = checkPagePosition({
 		actual_page: 2,
 		selected_page: page,
@@ -18,16 +18,16 @@ const MembersSearch = ({ page, setPage }) => {
 		<s.MembersPage position={position}>
 			MembersSearch
 			<br /><br />
-			<Button type="primary" onClick={() => setPage(1)}>1</Button>
+			<Button type="primary" onClick={() => moveToPage(1)}>1</Button>
 			<br /><br />
-			<Button type="primary" onClick={() => setPage(3)}>3</Button>
+			<Button type="primary" onClick={() => moveToPage(3)}>3</Button>
 		</s.MembersPage>
 	);
 };
 
 MembersSearch.propTypes = {
 	page: PropTypes.number.isRequired,
-	setPage: PropTypes.func.isRequired,
+	moveToPage: PropTypes.func.isRequired,
 };
 
 export default MembersSearch;

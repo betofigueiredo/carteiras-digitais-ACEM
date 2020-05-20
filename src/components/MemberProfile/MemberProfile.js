@@ -8,7 +8,7 @@ import * as s from './MemberProfile.style';
 // Functions
 import { checkPagePosition } from '../../functions/checkPagePosition';
 
-const MemberProfile = ({ page, setPage }) => {
+const MemberProfile = ({ page, moveToPage }) => {
 	const position = checkPagePosition({
 		actual_page: 3,
 		selected_page: page,
@@ -18,14 +18,14 @@ const MemberProfile = ({ page, setPage }) => {
 		<s.MemberProfile position={position}>
 			Profile
 			<br /><br />
-			<Button type="primary" onClick={() => setPage(2)}>2</Button>
+			<Button type="primary" onClick={() => moveToPage(2)}>2</Button>
 		</s.MemberProfile>
 	);
 };
 
 MemberProfile.propTypes = {
 	page: PropTypes.number.isRequired,
-	setPage: PropTypes.func.isRequired,
+	moveToPage: PropTypes.func.isRequired,
 };
 
 export default MemberProfile;
