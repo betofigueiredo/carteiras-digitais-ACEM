@@ -7,13 +7,11 @@ import Routes from './routes';
 import * as serviceWorker from './serviceWorker';
 
 const app = (
-	<React.StrictMode>
-		<StoreProvider>
-			<BrowserRouter>
-				<Routes />
-			</BrowserRouter>
-		</StoreProvider>
-	</React.StrictMode>
+	<StoreProvider>
+		<BrowserRouter>
+			<Routes />
+		</BrowserRouter>
+	</StoreProvider>
 );
 
 ReactDOM.render(app, document.getElementById('root'));
