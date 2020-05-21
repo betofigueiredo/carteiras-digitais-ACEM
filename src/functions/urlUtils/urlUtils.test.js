@@ -36,19 +36,19 @@ describe('getPageFromUrl', () => {
 });
 
 describe('getUrlFromPage', () => {
-	it('should return default value associations', () => {
+	it('should return default blank value', () => {
 		const result = urlUtils.getUrlFromPage();
-		expect(result).toBe('associations');
+		expect(result).toBe('');
 	});
 
-	it('should return page associations', () => {
+	it('should return page associations = blank value', () => {
 		const result = urlUtils.getUrlFromPage(1);
-		expect(result).toBe('associations');
+		expect(result).toBe('');
 	});
 
-	it('should return page associations', () => {
+	it('should return page associations = blank value', () => {
 		const result = urlUtils.getUrlFromPage(64);
-		expect(result).toBe('associations');
+		expect(result).toBe('');
 	});
 
 	it('should return page members', () => {

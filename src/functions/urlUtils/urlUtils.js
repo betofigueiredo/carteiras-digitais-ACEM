@@ -10,11 +10,11 @@ const getPageFromUrl = (match) => {
 
 const getUrlFromPage = (page_number) => {
 	const params = {
-		1: 'associations',
+		1: '',
 		2: 'members',
 		3: 'profile',
 	};
-	return params[page_number] || 'associations';
+	return params[page_number] || '';
 };
 
 export const urlUtils = {
