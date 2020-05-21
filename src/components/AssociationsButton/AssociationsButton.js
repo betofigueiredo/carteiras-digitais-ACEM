@@ -15,7 +15,7 @@ const AssociationsButton = ({ moveToPage }) => {
 	if (no_association_selected) {
 		return (
 			<Button type="primary" disabled>
-				Ir para membros
+				Buscar associados
 			</Button>
 		);
 	}
@@ -25,7 +25,7 @@ const AssociationsButton = ({ moveToPage }) => {
 			type="primary"
 			onClick={() => moveToPage(2)}
 		>
-			Ir para membros
+			Buscar associados
 		</Button>
 	);
 };
