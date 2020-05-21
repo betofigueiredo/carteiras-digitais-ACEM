@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useSelector, shallowEqual } from 'react-redux';
 
 // CSS
 import * as s from './AllPages.style';
@@ -15,6 +16,8 @@ import { urlUtils } from '../../functions/urlUtils';
 const AllPages = ({ match, history }) => {
 	const [page, setPage] = useState(1);
 	const page_url_param = urlUtils.getPageFromUrl(match);
+	const fetching = useSelector(store => store
+		.associations.fetching, shallowEqual);
 
 	useEffect(() => {
 		setPage(page_url_param);
@@ -24,6 +27,16 @@ const AllPages = ({ match, history }) => {
 		const page_url = urlUtils.getUrlFromPage(to);
 		history.push(page_url);
 	}
+
+	useLayoutEffect(() => {
+		const init_page_not_home = (
+			fetching === 'TO_START'
+			&& page_url_param !== 1
+		);
+		if (init_page_not_home) {
+			moveToPage(1);
+		}
+	}, []);
 
 	return (
 		<s.Wrapper>
