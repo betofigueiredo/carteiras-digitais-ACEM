@@ -1,15 +1,14 @@
 // Actions
-import { sheetRequested } from '../store/shared/actions';
+import { associationsSheetRequested } from '../store/associations/actions';
+import { membersSheetRequested } from '../store/memberships/actions';
 
 function getAssociations() {
-	const location = 'associations';
 	const sheet_url = process.env.REACT_APP_ASSOCIATIONS_SHEET;
-	return sheetRequested({ sheet_url, location });
+	return associationsSheetRequested({ sheet_url });
 }
 
-function getMemberships({ sheet_url }) {
-	const location = 'memberships';
-	return sheetRequested({ sheet_url, location });
+function getMemberships() {
+	return membersSheetRequested();
 }
 
 const api = {
