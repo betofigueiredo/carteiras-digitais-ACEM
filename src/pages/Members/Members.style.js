@@ -6,6 +6,7 @@ export const MembersPage = styled.div`
 	position: absolute;
 	top: 0;
 	width: 100%;
+	padding: 50px 0 0 0;
 	${transition(theme.pages_transition)}
 
 	${props => props.position === 'previous' && css`

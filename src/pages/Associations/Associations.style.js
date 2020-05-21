@@ -6,6 +6,7 @@ export const AssociationsPage = styled.div`
 	position: absolute;
 	top: 0;
 	width: 100%;
+	padding: 50px 0 0 0;
 	${transition(theme.pages_transition)}
 
 	${props => props.position === 'previous' && css`
@@ -27,6 +28,6 @@ export const Title = styled.h1`
 	font-weight: bold;
 `;
 
-export const SelectWrapper = styled.h1`
+export const SelectWrapper = styled.div`
 	margin: 20px 0 34px;
 `;
