@@ -10,7 +10,7 @@ describe('storeCleared', () => {
             fetching: 'TO_START',
             by_id: {},
             all_ids: [],
-            selected_membership_id: null,
+            selected_member_id: null,
 		};
 		expect(result).toStrictEqual(expected);
 	});

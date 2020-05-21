@@ -3,7 +3,7 @@ const storeCleared = (state = {}) => ({
 	fetching: 'TO_START',
 	by_id: {},
 	all_ids: [],
-	selected_membership_id: null,
+	selected_member_id: null,
 });
 
 export default storeCleared;
