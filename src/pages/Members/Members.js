@@ -3,11 +3,18 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 // CSS
-import { Button, Input } from 'antd';
 import * as s from './Members.style';
 
 // Api
 import api from '../../api';
+
+// Actions
+import { memberIdCleared } from '../../store/memberships/actions';
+
+// Components
+import BackButton from '../../components/BackButton';
+import MembersInput from '../../components/MembersInput';
+import MembersButton from '../../components/MembersButton';
 
 // Functions
 import { checkPagePosition } from '../../functions/checkPagePosition';
@@ -58,13 +65,16 @@ const Members = ({ page, moveToPage }) => {
 
 	return (
 		<s.MembersPage position={position}>
-			<Button onClick={() => moveToPage(1)}>Voltar</Button>
-			<br /><br />
-			Members
-			<br /><br />
-			<Input placeholder="Basic usage" />
-			<br /><br />
-			<Button type="primary" onClick={() => moveToPage(3)}>3</Button>
+			<BackButton
+				moveToPage={moveToPage}
+				page={1}
+			/>
+			<s.Title>Membros</s.Title>
+			<p>Faça a busca usando o número do associado</p>
+			<s.InputWrapper>
+				<MembersInput />
+			</s.InputWrapper>
+			<MembersButton moveToPage={moveToPage} page={page} />
 		</s.MembersPage>
 	);
 };
