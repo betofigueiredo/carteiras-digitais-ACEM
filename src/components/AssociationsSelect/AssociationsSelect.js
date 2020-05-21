@@ -40,7 +40,9 @@ const AssociationsSelect = () => {
 					key={association_id}
 					value={association_id}
 				>
-					{by_id[association_id].associacao}
+					{by_id[association_id].sigla}
+					{' - '}
+					{by_id[association_id].nome}
 				</Select.Option>
 			))}
 		</Select>
