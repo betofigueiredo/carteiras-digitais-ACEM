@@ -1,5 +1,8 @@
 import { v5 as uuidv5 } from 'uuid';
 
+// Functions
+import { normalizeKeys } from '../../../../functions/normalizeKeys';
+
 const associationsReceived = (state = {}, action = {}) => {
 	const associations_by_id = {};
 	const associations_all_ids = [];
@@ -21,16 +24,8 @@ const associationsReceived = (state = {}, action = {}) => {
 	}
 
 	function withLowerCaseKeys(association) {
-		const normalized_association = {};
-		Object.keys(association).forEach(key => {
-			const normalized_key = key
-				.normalize('NFD')
-				.replace(/[\u0300-\u036f]/g, '')
-				.replace(/ /g, '_')
-				.toLowerCase();
-			normalized_association[normalized_key] = association[key];
-		});
-		return normalized_association;
+		const normalized = normalizeKeys(association);
+		return normalized;
 	}
 
 	function normalizeList() {
