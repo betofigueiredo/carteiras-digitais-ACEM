@@ -12,9 +12,9 @@ export const Pages = styled.div`
 	display: inline-block;
 	width: 450px;
 	min-height: 600px;
-	margin: 50px auto;
+	margin: 90px auto;
 	background: #fff;
 	${borderRadius('21px')}
-	${boxShadow('0 4px 49px rgba(190, 196, 214, 0.18)')}
+	/* ${boxShadow('inset 0px 0px 19px 17px rgba(255,255,255,1)')} */
 	overflow: hidden;
 `;
