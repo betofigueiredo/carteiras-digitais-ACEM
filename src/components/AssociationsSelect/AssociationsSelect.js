@@ -5,7 +5,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Select } from 'antd';
 
 // Actions
-import { associationSelected } from '../../store/associations/actions';
+import { associationSelected } from '../../store/shared/actions';
 
 const AssociationsSelect = () => {
 	const dispatch = useDispatch();

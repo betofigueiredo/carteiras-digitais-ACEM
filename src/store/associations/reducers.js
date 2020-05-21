@@ -10,7 +10,7 @@ const funcs = {
 	'[associations] FETCH_REQUESTED': associationsRequested,
 	'[associations] FETCH_RECEIVED': associationsReceived,
 	'[associations] FETCH_REQUEST_FAILED': associationsRequestFailed,
-	'[associations] ASSOCIATION_SELECTED': associationSelected,
+	'[shared] ASSOCIATION_SELECTED': associationSelected,
 };
 
 const reducer = (state = associations, action) => {
