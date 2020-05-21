@@ -20,3 +20,13 @@ export const AssociationsPage = styled.div`
 		left: 100%;
 	`}
 `;
+
+export const Title = styled.h1`
+	margin-bottom: 0;
+	color: #274350;
+	font-weight: bold;
+`;
+
+export const SelectWrapper = styled.h1`
+	margin: 20px 0 34px;
+`;

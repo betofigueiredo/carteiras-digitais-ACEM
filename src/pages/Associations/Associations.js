@@ -30,12 +30,11 @@ const Associations = ({ page, moveToPage }) => {
 
 	return (
 		<s.AssociationsPage position={position}>
-			Associations
-
-			<div>
+			<s.Title>Associações</s.Title>
+			<p>Selecione abaixo a associação</p>
+			<s.SelectWrapper>
 				<AssociationsSelect />
-			</div>
-
+			</s.SelectWrapper>
 			<AssociationsButton
 				moveToPage={moveToPage}
 			/>
