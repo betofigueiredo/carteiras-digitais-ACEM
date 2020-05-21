@@ -51,6 +51,17 @@ const Members = ({ page, moveToPage }) => {
 		checkIfAlreadyLoaded();
 	}, [position]);
 
+	useEffect(() => {
+		function clearSelectedMember() {
+			if (position === 'active') {
+				const action = memberIdCleared();
+				dispatch(action);
+			}
+		}
+
+		return clearSelectedMember();
+	}, [position]);
+
 	const loading = (
 		fetching === 'TO_START'
 		|| fetching === 'FETCHING'
