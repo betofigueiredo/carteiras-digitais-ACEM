@@ -9,11 +9,9 @@ import * as s from './Associations.style';
 import api from '../../api';
 
 // Components
+import PageTransition from '../../components/PageTransition';
 import AssociationsSelect from '../../components/AssociationsSelect';
 import AssociationsButton from '../../components/AssociationsButton';
-
-// Functions
-import { checkPagePosition } from '../../functions/checkPagePosition';
 
 const Associations = ({ page, moveToPage }) => {
 	const dispatch = useDispatch();
@@ -23,13 +21,8 @@ const Associations = ({ page, moveToPage }) => {
 		dispatch(action_via_api);
 	}, []);
 
-	const position = checkPagePosition({
-		actual_page: 1,
-		selected_page: page,
-	});
-
 	return (
-		<s.AssociationsPage position={position}>
+		<PageTransition actual_page={1} page={page}>
 			<s.Title>Associações</s.Title>
 			<p>Selecione abaixo a associação</p>
 			<s.SelectWrapper>
@@ -38,7 +31,7 @@ const Associations = ({ page, moveToPage }) => {
 			<AssociationsButton
 				moveToPage={moveToPage}
 			/>
-		</s.AssociationsPage>
+		</PageTransition>
 	);
 };
 

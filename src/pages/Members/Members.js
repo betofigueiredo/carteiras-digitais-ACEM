@@ -12,12 +12,10 @@ import api from '../../api';
 import { memberIdCleared } from '../../store/memberships/actions';
 
 // Components
+import PageTransition from '../../components/PageTransition';
 import BackButton from '../../components/BackButton';
 import MembersInput from '../../components/MembersInput';
 import MembersButton from '../../components/MembersButton';
-
-// Functions
-import { checkPagePosition } from '../../functions/checkPagePosition';
 
 const Members = ({ page, moveToPage }) => {
 	const dispatch = useDispatch();
@@ -26,10 +24,7 @@ const Members = ({ page, moveToPage }) => {
 	const selected_association_id = useSelector(store => store
 		.associations.selected_association_id, shallowEqual);
 
-	const position = checkPagePosition({
-		actual_page: 2,
-		selected_page: page,
-	});
+	const is_page_active = page === 2;
 
 	useEffect(() => {
 		function fetchMembers() {
@@ -39,7 +34,7 @@ const Members = ({ page, moveToPage }) => {
 
 		function checkIfAlreadyLoaded() {
 			const not_loaded = (
-				position === 'active'
+				is_page_active
 				&& fetching === 'TO_START'
 				&& selected_association_id !== null
 			);
@@ -49,18 +44,18 @@ const Members = ({ page, moveToPage }) => {
 		}
 
 		checkIfAlreadyLoaded();
-	}, [position]);
+	}, [is_page_active]);
 
 	useEffect(() => {
 		function clearSelectedMember() {
-			if (position === 'active') {
+			if (is_page_active) {
 				const action = memberIdCleared();
 				dispatch(action);
 			}
 		}
 
 		return clearSelectedMember();
-	}, [position]);
+	}, [is_page_active]);
 
 	const loading = (
 		fetching === 'TO_START'
@@ -68,14 +63,16 @@ const Members = ({ page, moveToPage }) => {
 	);
 	if (loading) {
 		return (
-			<s.MembersPage position={position}>
+			<PageTransition actual_page={2} page={page}>
 				carregando membros...
-			</s.MembersPage>
+			</PageTransition>
 		);
 	}
 
+	// TODO mostrar nome da associação selecionada
+
 	return (
-		<s.MembersPage position={position}>
+		<PageTransition actual_page={2} page={page}>
 			<BackButton
 				moveToPage={moveToPage}
 				page={1}
@@ -86,7 +83,7 @@ const Members = ({ page, moveToPage }) => {
 				<MembersInput />
 			</s.InputWrapper>
 			<MembersButton moveToPage={moveToPage} page={page} />
-		</s.MembersPage>
+		</PageTransition>
 	);
 };
 
