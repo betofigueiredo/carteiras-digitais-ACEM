@@ -8,6 +8,7 @@ import * as s from './MemberProfile.style';
 // Components
 import PageTransition from '../../components/PageTransition';
 import BackButton from '../../components/BackButton';
+import MemberProfilePhoto from '../../components/MemberProfilePhoto';
 import MemberProfileAssociation from '../../components/MemberProfileAssociation';
 import MemberProfileValidity from '../../components/MemberProfileValidity';
 import MemberProfileCourses from '../../components/MemberProfileCourses';
@@ -28,9 +29,9 @@ const MemberProfile = ({ page, moveToPage }) => {
 				moveToPage={moveToPage}
 				page={2}
 			/>
-			<s.PhotoWrapper>
-				<s.Photo />
-			</s.PhotoWrapper>
+			<MemberProfilePhoto
+				member_info={member_info}
+			/>
 			<s.Name>{nome}</s.Name>
 			<s.Number>#{numero}</s.Number>
 			<s.InfoBlock>
