@@ -1,15 +1,18 @@
 const memberSelected = (state = {}) => {
 	const search = state.search || '';
 
-	function showError() {
-		// TODO error
-		return { ...state };
+	function showError(error) {
+		return {
+			...state,
+			error,
+		};
 	}
 
 	function selectMember(member_id) {
 		const updated_state = {
 			...state,
 			selected_member_id: member_id,
+			error: null,
 		};
 		return updated_state;
 	}
@@ -20,7 +23,8 @@ const memberSelected = (state = {}) => {
 		const member_info = by_id[member_id];
 		const invalid_member = member_info === undefined;
 		if (invalid_member) {
-			return showError();
+			const error = 'user_does_not_exist';
+			return showError(error);
 		}
 		return selectMember(member_id);
 	}
@@ -28,7 +32,8 @@ const memberSelected = (state = {}) => {
 	function getSearchedId() {
 		const invalid_search = search === '';
 		if (invalid_search) {
-			return showError();
+			const error = 'empty_search';
+			return showError(error);
 		}
 		return checkIfMemberExists();
 	}
