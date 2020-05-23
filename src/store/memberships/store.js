@@ -4,6 +4,7 @@ const memberships = {
 	all_ids: [],
 	search: '',
 	selected_member_id: null,
+	error: null,
 };
 
 export default memberships;
