@@ -16,6 +16,7 @@ import PageTransition from '../../components/PageTransition';
 import BackButton from '../../components/BackButton';
 import MembersInput from '../../components/MembersInput';
 import MembersButton from '../../components/MembersButton';
+import MembersErrors from '../../components/MembersErrors';
 
 const Members = ({ page, moveToPage }) => {
 	const dispatch = useDispatch();
@@ -82,7 +83,11 @@ const Members = ({ page, moveToPage }) => {
 			<s.InputWrapper>
 				<MembersInput />
 			</s.InputWrapper>
-			<MembersButton moveToPage={moveToPage} page={page} />
+			<MembersErrors />
+			<MembersButton
+				moveToPage={moveToPage}
+				page={page}
+			/>
 		</PageTransition>
 	);
 };
