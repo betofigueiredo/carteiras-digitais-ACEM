@@ -5,9 +5,14 @@ const searchInputChanged = (state = {}, action = {}) => {
 		return updated_state;
 	}
 
+	function clearErrors() {
+		updated_state.error = null;
+		return updateStore();
+	}
+
 	function clearSelectedMember() {
 		updated_state.selected_member_id = null;
-		return updateStore();
+		return clearErrors();
 	}
 
 	function updateSearchValue() {
