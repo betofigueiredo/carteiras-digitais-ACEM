@@ -1,4 +1,4 @@
-const memberSelected = (state = {}, action = {}) => {
+const searchInputChanged = (state = {}, action = {}) => {
 	const updated_state = { ...state };
 
 	function updateStore() {
@@ -19,4 +19,4 @@ const memberSelected = (state = {}, action = {}) => {
 	return updateSearchValue();
 };
 
-export default memberSelected;
+export default searchInputChanged;
