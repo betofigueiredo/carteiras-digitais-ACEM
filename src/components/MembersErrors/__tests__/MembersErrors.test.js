@@ -2,14 +2,14 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 // import 'jest-styled-components';
-import renderWithRedux from '../../tests/setupReduxTests';
-import findText from '../../tests/findText';
+import renderWithRedux from '../../../tests/setupReduxTests';
+import findText from '../../../tests/findText';
 
 // Store
-import memberships from '../../store/memberships/store';
+import memberships from '../../../store/memberships/store';
 
 // Components
-import MembersErrors from './MembersErrors';
+import MembersErrors from '../MembersErrors';
 
 describe('MembersErrors', () => {
 	it('should not break with a blank memberships store', async () => {
