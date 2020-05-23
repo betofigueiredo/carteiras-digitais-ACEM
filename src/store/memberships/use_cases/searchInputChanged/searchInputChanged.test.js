@@ -7,6 +7,7 @@ describe('searchInputChanged', () => {
 		const expected = {
             search: '',
             selected_member_id: null,
+            error: null,
         };
 		expect(result).toStrictEqual(expected);
 	});
@@ -31,5 +32,12 @@ describe('searchInputChanged', () => {
             search: 'New',
             selected_member_id: null,
         });
+	});
+
+	it('should reset errors', () => {
+        const state = { ...memberships, error: 'empty_search' };
+        const action = { value: 'a' };
+        const result = searchInputChanged(state, action);
+		expect(result.error).toStrictEqual(null);
 	});
 });
