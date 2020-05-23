@@ -24,6 +24,8 @@ const MembersInput = () => {
 		dispatch(action);
 	}
 
+	// TODO blur after search
+
 	return (
 		<Input
 			onChange={handleSearch}
