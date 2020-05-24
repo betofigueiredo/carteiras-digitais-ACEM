@@ -44,6 +44,7 @@
     "jest": "24.9.0",
     "jest-environment-jsdom-fourteen": "1.0.1",
     "jest-resolve": "24.9.0",
+    "jest-styled-components": "^7.0.2",
     "jest-watch-typeahead": "0.4.2",
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
