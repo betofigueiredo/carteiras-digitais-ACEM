@@ -32,7 +32,10 @@ const MemberProfileValidity = ({ member_info = {} }) => {
 
 	return (
 		<>
-			<s.Status is_valid={is_valid}>
+			<s.Status
+				is_valid={is_valid}
+				data-testid="validity-icon"
+			>
 				{icon}
 			</s.Status>
 			<label>Mensalidade válida até</label>
