@@ -8,7 +8,7 @@ export const Status = styled.div`
     width: 38px;
     height: 38px;
     padding: 9px 0 0 0;
-	background: red;
+	background: #ff3c57;
 	${borderRadius('40px')}
 	color: #fff;
 	text-align: center;
@@ -19,6 +19,6 @@ export const Status = styled.div`
 `;
 
 export const InvalidDate = styled.span`
-	color: red;
+	color: #ff3c57;
 	text-decoration: line-through;
 `;
