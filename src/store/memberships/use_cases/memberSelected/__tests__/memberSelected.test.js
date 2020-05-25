@@ -1,5 +1,5 @@
-import memberSelected from './memberSelected';
-import memberships from '../../store';
+import memberSelected from '../memberSelected';
+import memberships from '../../../store';
 
 describe('memberSelected', () => {
 	it('should return empty_search error', () => {

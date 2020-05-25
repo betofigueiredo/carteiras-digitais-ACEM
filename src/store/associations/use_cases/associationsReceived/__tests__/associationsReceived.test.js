@@ -1,6 +1,6 @@
 import { v5 as uuidv5 } from 'uuid';
-import associationsReceived from './associationsReceived';
-import associations from '../../store';
+import associationsReceived from '../associationsReceived';
+import associations from '../../../store';
 
 function createUniqueId(planilha_url) {
 	const MY_NAMESPACE = process.env.REACT_APP_NAMESPACE;

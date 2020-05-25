@@ -1,5 +1,5 @@
-import memberIdCleared from './memberIdCleared';
-import memberships from '../../store';
+import memberIdCleared from '../memberIdCleared';
+import memberships from '../../../store';
 
 describe('memberIdCleared', () => {
 	it('should not break with undefined values', () => {

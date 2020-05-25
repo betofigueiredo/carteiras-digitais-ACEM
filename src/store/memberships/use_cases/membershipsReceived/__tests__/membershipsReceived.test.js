@@ -1,5 +1,5 @@
-import membershipsReceived from './membershipsReceived';
-import memberships from '../../store';
+import membershipsReceived from '../membershipsReceived';
+import memberships from '../../../store';
 
 describe('membershipsReceived', () => {
 	const state = { ...memberships };

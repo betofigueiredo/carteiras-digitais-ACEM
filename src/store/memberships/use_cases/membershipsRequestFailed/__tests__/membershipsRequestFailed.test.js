@@ -1,5 +1,5 @@
-import membershipsRequestFailed from './membershipsRequestFailed';
-import memberships from '../../store';
+import membershipsRequestFailed from '../membershipsRequestFailed';
+import memberships from '../../../store';
 
 describe('membershipsRequestFailed', () => {
 	it('should show error requesting memberships', () => {

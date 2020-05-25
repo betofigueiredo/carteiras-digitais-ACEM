@@ -1,5 +1,5 @@
-import associationsRequestFailed from './associationsRequestFailed';
-import associations from '../../store';
+import associationsRequestFailed from '../associationsRequestFailed';
+import associations from '../../../store';
 
 describe('associationsRequestFailed', () => {
 	it('should show error requesting associations', () => {

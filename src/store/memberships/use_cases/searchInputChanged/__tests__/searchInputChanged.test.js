@@ -1,5 +1,5 @@
-import searchInputChanged from './searchInputChanged';
-import memberships from '../../store';
+import searchInputChanged from '../searchInputChanged';
+import memberships from '../../../store';
 
 describe('searchInputChanged', () => {
 	it('should not break with undefined values', () => {

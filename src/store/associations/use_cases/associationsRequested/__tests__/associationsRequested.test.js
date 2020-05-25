@@ -1,5 +1,5 @@
-import associationsRequested from './associationsRequested';
-import associations from '../../store';
+import associationsRequested from '../associationsRequested';
+import associations from '../../../store';
 
 describe('associationsRequested', () => {
 	it('should start fetching associations', () => {

@@ -1,5 +1,5 @@
-import membershipsRequested from './membershipsRequested';
-import memberships from '../../store';
+import membershipsRequested from '../membershipsRequested';
+import memberships from '../../../store';
 
 describe('membershipsRequested', () => {
 	it('should start fetching memberships', () => {

@@ -1,5 +1,5 @@
-import storeCleared from './storeCleared';
-import memberships from '../../store';
+import storeCleared from '../storeCleared';
+import memberships from '../../../store';
 
 describe('storeCleared', () => {
 	it('should reset the store when new association selected', () => {

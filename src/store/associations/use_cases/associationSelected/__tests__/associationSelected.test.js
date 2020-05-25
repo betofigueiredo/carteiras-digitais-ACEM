@@ -1,5 +1,5 @@
-import associationSelected from './associationSelected';
-import associations from '../../store';
+import associationSelected from '../associationSelected';
+import associations from '../../../store';
 
 describe('associationSelected', () => {
 	it('should not break with undefined values', () => {
