@@ -24,10 +24,9 @@ const MembersInput = () => {
 		dispatch(action);
 	}
 
-	// TODO blur after search
-
 	return (
 		<Input
+			aria-label="search-input"
 			onChange={handleSearch}
 			onPressEnter={selectMember}
 		/>
