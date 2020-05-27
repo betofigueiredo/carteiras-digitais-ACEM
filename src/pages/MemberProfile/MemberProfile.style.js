@@ -13,7 +13,8 @@ export const Number = styled.div`
 
 export const InfoBlock = styled.div`
 	position: relative;
-	width: 300px;
+	width: 100%;
+	max-width: 300px;
 	margin: 25px auto;
 	padding: 0 0 0 80px;
 	text-align: left;

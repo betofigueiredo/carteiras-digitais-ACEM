@@ -7,6 +7,7 @@ export const Title = styled.h1`
 `;
 
 export const InputWrapper = styled.div`
+	width: 100%;
 	max-width: 300px;
 	margin: 20px auto 34px;
 `;

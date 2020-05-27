@@ -9,10 +9,14 @@ export const Wrapper = styled.div`
 export const Pages = styled.div`
 	position: relative;
 	display: inline-block;
-	width: 450px;
+	width: 100%;
+	max-width: 450px;
 	min-height: 600px;
-	margin: 40px auto;
+	margin: 10px auto;
 	background: #fff;
 	overflow: hidden;
-	/* border: 1px solid #ccc; */
+
+	@media (min-width: 768px) {
+		margin: 40px auto;
+	}
 `;
