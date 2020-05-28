@@ -29,6 +29,7 @@ const MembersInput = () => {
 			aria-label="search-input"
 			onChange={handleSearch}
 			onPressEnter={selectMember}
+			placeholder="número do associado"
 		/>
 	);
 };
