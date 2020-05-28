@@ -17,6 +17,7 @@ import BackButton from '../../components/BackButton';
 import MembersInput from '../../components/MembersInput';
 import MembersButton from '../../components/MembersButton';
 import MembersErrors from '../../components/MembersErrors';
+import AssociationSelectedView from '../../components/AssociationSelectedView';
 
 const Members = ({ page, moveToPage }) => {
 	const dispatch = useDispatch();
@@ -70,8 +71,6 @@ const Members = ({ page, moveToPage }) => {
 		);
 	}
 
-	// TODO mostrar nome da associação selecionada
-
 	return (
 		<PageTransition actual_page={2} page={page}>
 			<BackButton
@@ -79,7 +78,9 @@ const Members = ({ page, moveToPage }) => {
 				page={1}
 			/>
 			<s.Title>Membros</s.Title>
-			<p>Faça a busca usando o número do associado</p>
+			<s.Subtitle>
+				Busque associados da <b><AssociationSelectedView /></b>
+			</s.Subtitle>
 			<s.InputWrapper>
 				<MembersInput />
 			</s.InputWrapper>
