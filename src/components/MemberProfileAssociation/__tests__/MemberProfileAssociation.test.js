@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import renderWithRedux from '../../../tests/setupReduxTests';
 
@@ -15,18 +15,6 @@ describe('MemberProfileAssociation', () => {
 			<MemberProfileAssociation />,
 			{ initialState: { associations: {} } },
 		);
-	});
-
-	it('should render null with invalid association', async () => {
-		const mocked_store = {
-			...associations,
-			selected_association_id: '44',
-		}
-		renderWithRedux(
-			<MemberProfileAssociation />,
-			{ initialState: { associations: mocked_store } },
-		);
-		expect(screen.queryByText('Associado à')).not.toBeInTheDocument();
 	});
 
 	it('should render the association sigla', async () => {

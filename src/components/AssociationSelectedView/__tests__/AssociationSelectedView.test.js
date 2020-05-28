@@ -7,12 +7,12 @@ import renderWithRedux from '../../../tests/setupReduxTests';
 import associations from '../../../store/associations/store';
 
 // Components
-import MemberProfileAssociation from '../MemberProfileAssociation';
+import AssociationSelectedView from '../AssociationSelectedView';
 
-describe('MemberProfileAssociation', () => {
+describe('AssociationSelectedView', () => {
 	it('should not break with blank props', async () => {
 		renderWithRedux(
-			<MemberProfileAssociation />,
+			<AssociationSelectedView />,
 			{ initialState: { associations: {} } },
 		);
 	});
@@ -22,11 +22,11 @@ describe('MemberProfileAssociation', () => {
 			...associations,
 			selected_association_id: '44',
 		}
-		renderWithRedux(
-			<MemberProfileAssociation />,
+		const { container } = renderWithRedux(
+			<AssociationSelectedView />,
 			{ initialState: { associations: mocked_store } },
 		);
-		expect(screen.queryByText('Associado à')).not.toBeInTheDocument();
+		expect(container.firstChild).toBeNull();
 	});
 
 	it('should render the association sigla', async () => {
@@ -42,10 +42,9 @@ describe('MemberProfileAssociation', () => {
 			selected_association_id: '10',
 		}
 		renderWithRedux(
-			<MemberProfileAssociation />,
+			<AssociationSelectedView />,
 			{ initialState: { associations: mocked_store } },
 		);
-		expect(screen.getByText('Associado à')).toBeInTheDocument();
 		expect(screen.getByText('ACEM')).toBeInTheDocument();
 	});
 });
