@@ -21,8 +21,6 @@ Possível sistema para disponibilizar a versão digital das carteirinhas da **As
 <hr />
 <br />
 
-[![MIT License][license-badge]][license]
-
 ## A ideia
 
 Digitalizar as carteirinhas de associados
